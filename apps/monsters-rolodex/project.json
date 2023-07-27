@@ -1,0 +1,78 @@
+{
+  "name": "monsters-rolodex",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/monsters-rolodex/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/monsters-rolodex"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "monsters-rolodex:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "monsters-rolodex:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "monsters-rolodex:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "monsters-rolodex:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "monsters-rolodex:build:development"
+        },
+        "production": {
+          "buildTarget": "monsters-rolodex:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/monsters-rolodex"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/monsters-rolodex"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/monsters-rolodex/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "monsters-rolodex:build"
+      }
+    }
+  },
+  "tags": []
+}

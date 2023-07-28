@@ -1,0 +1,78 @@
+{
+  "name": "ali3n-clothes",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/ali3n-clothes/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/ali3n-clothes"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ali3n-clothes:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ali3n-clothes:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "ali3n-clothes:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "ali3n-clothes:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "ali3n-clothes:build:development"
+        },
+        "production": {
+          "buildTarget": "ali3n-clothes:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/ali3n-clothes"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/ali3n-clothes"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ali3n-clothes/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "ali3n-clothes:build"
+      }
+    }
+  },
+  "tags": []
+}

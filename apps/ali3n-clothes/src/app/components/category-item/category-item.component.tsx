@@ -6,7 +6,7 @@ interface CategoryItemProps {
   category: Category
 }
 
-const CategoryItem = ({ category }: CategoryItemProps) => {
+const CategoryItem : React.FC<CategoryItemProps> = ({ category }) => {
   const { name, imageUrl } = category
   return (
     <div className='category-container'>

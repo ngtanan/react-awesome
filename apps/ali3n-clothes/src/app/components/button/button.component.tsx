@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './button.styles.scss'
 
 interface ButtonProps {
@@ -14,7 +12,7 @@ const BUTTON_TYPES: {[key: string]: string} = {
   'inverted': 'inverted'
 }
 
-const Button: React.FC<ButtonProps> = ({ children, buttonType, ...otherProps }) => {
+const Button : React.FC<ButtonProps> = ({ children, buttonType, ...otherProps }) => {
   return (
     <button
       className={`button-container ${buttonType && BUTTON_TYPES[buttonType]}`}

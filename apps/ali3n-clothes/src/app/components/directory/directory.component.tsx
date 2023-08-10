@@ -7,7 +7,7 @@ interface CategoryItemProps {
   categories: Array<Category>
 }
 
-const Directory = ({ categories }: CategoryItemProps) => {
+const Directory : React.FC<CategoryItemProps> = ({ categories }) => {
   return (
     <div className='directory-container'>
       {categories.map((category) => (

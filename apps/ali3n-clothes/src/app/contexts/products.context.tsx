@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-import type { Product } from "../app.types";
+import { IProduct } from "../app.types";
 import PRODUCTS from "./../shop-data.json";
 
 type ProductsProviderProps = {
@@ -8,12 +8,12 @@ type ProductsProviderProps = {
 }
 
 export const ProductsContext = createContext({
-  products: [] as Array<Product>,
+  products: [] as IProduct[]
 });
 
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
-  const [products, setProducts] = useState(PRODUCTS as Array<Product>);
+  const [products, setProducts] = useState(PRODUCTS as IProduct[]);
   const value = { products };
   return (
     <ProductsContext.Provider value={value}>

@@ -1,10 +1,10 @@
-export type Category = {
+export interface ICategory {
   id: number;
   name: string;
   imageUrl: string;
 }
 
-export type Product = {
+export interface IProduct {
   id: number;
   name: string;
   imageUrl: string;

@@ -1,9 +1,9 @@
 import Button from '../button/button.component';
-import { Product } from '../../app.types';
+import { IProduct } from '../../app.types';
 import './product-card.styles.scss'
 
 interface ProductCardProps {
-  product: Product;
+  product: IProduct;
 }
 
 const ProductCard : React.FC<ProductCardProps> = ({ product }) => {

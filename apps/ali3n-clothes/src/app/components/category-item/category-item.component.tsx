@@ -1,9 +1,9 @@
-import type { Category } from '../../app.types'
+import { ICategory } from '../../app.types'
 
 import './category-item.styles.scss'
 
 interface CategoryItemProps {
-  category: Category
+  category: ICategory
 }
 
 const CategoryItem : React.FC<CategoryItemProps> = ({ category }) => {

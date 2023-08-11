@@ -1,7 +1,7 @@
 import Directory from '../../components/directory/directory.component'
-import type { Category } from '../../app.types'
+import { ICategory } from '../../app.types'
 
-const categories: Category[] = [
+const categories: ICategory[] = [
   {
     id: 1,
     name: 'Hats',

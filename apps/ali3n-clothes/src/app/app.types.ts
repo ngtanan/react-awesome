@@ -10,3 +10,7 @@ export interface IProduct {
   imageUrl: string;
   price: number;
 }
+
+export interface ICartItem extends IProduct {
+  quantity: number;
+}

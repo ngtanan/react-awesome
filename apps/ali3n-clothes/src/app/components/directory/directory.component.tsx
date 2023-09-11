@@ -3,11 +3,11 @@ import { ICategory } from '../../app.types'
 
 import './directory.styles.scss'
 
-interface CategoryItemProps {
+type CategoryItemProps = {
   categories: ICategory[]
 }
 
-const Directory : React.FC<CategoryItemProps> = ({ categories }) => {
+const Directory: React.FC<CategoryItemProps> = ({ categories }) => {
   return (
     <div className='directory-container'>
       {categories.map((category) => (

@@ -1,6 +1,6 @@
 import './form-input.styles.scss'
 
-interface FormInputProps {
+type FormInputProps = {
   label?: string;
   type: string;
   value: string;

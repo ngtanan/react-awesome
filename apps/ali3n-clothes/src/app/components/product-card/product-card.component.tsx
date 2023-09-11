@@ -7,11 +7,11 @@ import { IProduct } from '../../app.types';
 
 import './product-card.styles.scss'
 
-interface ProductCardProps {
+type ProductCardProps = {
   product: IProduct;
 }
 
-const ProductCard : React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { name, imageUrl, price } = product
   const { addItemToCart } = useContext(CartContext);
 

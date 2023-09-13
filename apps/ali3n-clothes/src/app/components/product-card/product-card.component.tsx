@@ -11,7 +11,7 @@ type ProductCardProps = {
   product: IProduct;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard = ({ product }: ProductCardProps) => {
   const { name, imageUrl, price } = product
   const { addItemToCart } = useContext(CartContext)
 

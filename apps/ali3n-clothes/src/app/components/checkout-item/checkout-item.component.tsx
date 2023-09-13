@@ -9,7 +9,7 @@ type CheckoutItemProps = {
   cartItem: ICartItem
 }
 
-const CheckoutItem: React.FC<CheckoutItemProps> = ({ cartItem }) => {
+const CheckoutItem = ({ cartItem }: CheckoutItemProps) => {
   const {
     name, imageUrl, price, quantity
   } = cartItem
@@ -31,11 +31,23 @@ const CheckoutItem: React.FC<CheckoutItemProps> = ({ cartItem }) => {
         {' '}
       </span>
       <span className="quantity">
-        <div className="arrow" onClick={removeItemHandler}>
+        <div
+          role="button"
+          tabIndex={0}
+          className="arrow"
+          onClick={removeItemHandler}
+          onKeyDown={removeItemHandler}
+        >
           &#10094;
         </div>
         <span className="value">{quantity}</span>
-        <div className="arrow" onClick={addItemHandler}>
+        <div
+          role="button"
+          tabIndex={0}
+          className="arrow"
+          onClick={addItemHandler}
+          onKeyDown={addItemHandler}
+        >
           &#10095;
         </div>
       </span>
@@ -43,7 +55,13 @@ const CheckoutItem: React.FC<CheckoutItemProps> = ({ cartItem }) => {
         {' '}
         {price}
       </span>
-      <div className="remove-button" onClick={clearItemHandler}>
+      <div
+        role="button"
+        tabIndex={0}
+        className="remove-button"
+        onClick={clearItemHandler}
+        onKeyDown={clearItemHandler}
+      >
         &#10005;
       </div>
     </div>

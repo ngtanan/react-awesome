@@ -6,7 +6,7 @@ type CategoryItemProps = {
   category: ICategory
 }
 
-const CategoryItem: React.FC<CategoryItemProps> = ({ category }) => {
+const CategoryItem = ({ category }: CategoryItemProps) => {
   const { name, imageUrl } = category
   return (
     <div className="category-container">

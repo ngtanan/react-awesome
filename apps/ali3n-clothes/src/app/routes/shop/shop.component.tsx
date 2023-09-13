@@ -6,7 +6,7 @@ import ProductCard from '../../components/product-card/product-card.component'
 
 import './shop.styles.scss'
 
-function Shop() {
+const Shop = () => {
   const { products } = useContext(ProductsContext)
   return (
     <div className="shop">

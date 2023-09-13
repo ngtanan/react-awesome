@@ -8,7 +8,7 @@ import CartItem from '../cart-item/cart-item.component'
 
 import './cart-dropdown.styles.scss'
 
-function CartDropdown() {
+const CartDropdown = () => {
   const { cartItems } = useContext(CartContext)
   const navigate = useNavigate()
 

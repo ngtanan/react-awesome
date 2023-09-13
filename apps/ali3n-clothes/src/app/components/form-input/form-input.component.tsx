@@ -11,7 +11,7 @@ type FormInputProps = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const FormInput: React.FC<FormInputProps> = ({ label, ...otherProps }) => (
+const FormInput = ({ label, ...otherProps }: FormInputProps) => (
   <div className="form-group">
     <input className="form-input" {...otherProps} />
     {

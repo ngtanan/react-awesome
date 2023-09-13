@@ -12,7 +12,7 @@ const BUTTON_TYPES: { [key: string]: string } = {
   inverted: 'inverted'
 }
 
-const Button: React.FC<ButtonProps> = ({ children, buttonType, ...otherProps }) => (
+const Button = ({ children, buttonType, ...otherProps }: ButtonProps) => (
   <button
     className={`button-container ${buttonType && BUTTON_TYPES[buttonType]}`}
     {...otherProps}

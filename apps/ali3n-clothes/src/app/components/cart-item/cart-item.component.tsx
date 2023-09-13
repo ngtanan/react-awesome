@@ -5,7 +5,7 @@ type CartItemProps = {
   cartItem: ICartItem
 }
 
-const CartItem: React.FC<CartItemProps> = ({ cartItem }) => {
+const CartItem = ({ cartItem }: CartItemProps) => {
   const {
     imageUrl, price, name, quantity
   } = cartItem

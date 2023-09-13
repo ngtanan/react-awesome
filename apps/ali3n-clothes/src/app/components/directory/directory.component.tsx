@@ -7,7 +7,7 @@ type CategoryItemProps = {
   categories: ICategory[]
 }
 
-const Directory: React.FC<CategoryItemProps> = ({ categories }) => (
+const Directory = ({ categories }: CategoryItemProps) => (
   <div className="directory-container">
     {categories.map((category) => (
       <CategoryItem key={category.id} category={category} />

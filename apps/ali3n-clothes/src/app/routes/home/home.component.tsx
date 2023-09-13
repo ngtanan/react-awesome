@@ -29,8 +29,6 @@ const categories: ICategory[] = [
   }
 ]
 
-function Home() {
-  return <Directory categories={categories} />
-}
+const Home = () => <Directory categories={categories} />
 
 export default Home

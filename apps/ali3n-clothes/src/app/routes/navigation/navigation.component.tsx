@@ -11,7 +11,7 @@ import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component
 
 import './navigation.styles.scss'
 
-function Navigation() {
+const Navigation = () => {
   const { currentUser } = useContext(UserContext)
   const { isCartOpen } = useContext(CartContext)
 
@@ -25,7 +25,7 @@ function Navigation() {
           <Link to="/shop" className="nav-link">SHOP</Link>
           <Link to="/about" className="nav-link">CONTACT</Link>
           {currentUser ? (
-            <span className="nav-link" onClick={signOutAuth}>SIGN OUT</span>
+            <span role="button" tabIndex={0} className="nav-link" onClick={signOutAuth} onKeyDown={signOutAuth}>SIGN OUT</span>
           ) : (
             <Link to="/auth" className="nav-link">SIGN IN</Link>
           )}

@@ -1,9 +1,9 @@
-import { useContext } from 'react';
+import { useContext } from 'react'
 
-import { CartContext } from '../../contexts/cart.context';
+import { CartContext } from '../../contexts/cart.context'
 
-import Button from '../button/button.component';
-import { IProduct } from '../../app.types';
+import Button from '../button/button.component'
+import { IProduct } from '../../app.types'
 
 import './product-card.styles.scss'
 
@@ -13,9 +13,9 @@ type ProductCardProps = {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { name, imageUrl, price } = product
-  const { addItemToCart } = useContext(CartContext);
+  const { addItemToCart } = useContext(CartContext)
 
-  const addProductToCart = () => addItemToCart(product);
+  const addProductToCart = () => addItemToCart(product)
 
   return (
     <div className="product-card-container">

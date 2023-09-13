@@ -2,27 +2,27 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
-import svgr from "vite-plugin-svgr";
+import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/ali3n-clothes',
 
   server: {
     port: 4200,
-    host: 'localhost',
+    host: 'localhost'
   },
 
   preview: {
     port: 4300,
-    host: 'localhost',
+    host: 'localhost'
   },
 
   plugins: [
     react(),
     viteTsConfigPaths({
-      root: '../../',
+      root: '../../'
     }),
-    svgr(),
+    svgr()
   ],
 
   // Uncomment this if you are using workers.
@@ -37,9 +37,9 @@ export default defineConfig({
   test: {
     globals: true,
     cache: {
-      dir: '../../node_modules/.vitest',
+      dir: '../../node_modules/.vitest'
     },
     environment: 'jsdom',
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-  },
+    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
+  }
 })

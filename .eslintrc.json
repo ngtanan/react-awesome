@@ -1,7 +1,13 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "tsconfigRootDir": "{projectRoot}",
+    "project": "tsconfig.base.json",
+    "sourceType": "module"
+  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -23,12 +29,20 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript"],
-      "rules": {}
+      "extends": ["plugin:@nx/typescript", "airbnb", "airbnb-typescript"],
+      "rules": {
+        "@typescript-eslint/comma-dangle": ["error", "never"],
+        "@typescript-eslint/semi": ["error", "never"],
+        "class-methods-use-this": "off",
+        "import/prefer-default-export": "off",
+        "no-restricted-syntax": "off",
+        "linebreak-style": "off",
+        "max-len": "off"
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
+      "extends": ["plugin:@nx/javascript", "airbnb"],
       "rules": {}
     }
   ]

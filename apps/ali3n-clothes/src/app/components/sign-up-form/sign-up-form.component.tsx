@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import FormInput from '../form-input/form-input.component'
+import Button from '../button/button.component'
 
 import {
   createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
-} from '../../utils/firebase/firebase.utils';
+  createUserDocumentFromAuth
+} from '../../utils/firebase/firebase.utils'
 
 import './sign-up-form.styles.scss'
 
@@ -17,41 +17,41 @@ const defaultFormFields = {
   confirmPassword: ''
 }
 
-const SignUpForm = () => {
-  const [formFields, setFormFields] = useState(defaultFormFields);
+function SignUpForm() {
+  const [formFields, setFormFields] = useState(defaultFormFields)
 
-  const resetFormFields = () => setFormFields(defaultFormFields);
+  const resetFormFields = () => setFormFields(defaultFormFields)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
     if (formFields.password !== formFields.confirmPassword) {
-      alert('Passwords do not match');
-      return;
+      alert('Passwords do not match')
+      return
     }
     try {
       const { user } = await createAuthUserWithEmailAndPassword(
         formFields.email,
         formFields.password
-      );
-      await createUserDocumentFromAuth(user, { displayName: formFields.displayName });
-      resetFormFields();
+      )
+      await createUserDocumentFromAuth(user, { displayName: formFields.displayName })
+      resetFormFields()
     } catch (error) {
       if ((error as { code: string }).code === 'auth/email-already-in-use') {
-        alert('Email already in use');
+        alert('Email already in use')
       } else {
-        console.error('Error creating user', (error as Error).message);
+        console.error('Error creating user', (error as Error).message)
       }
     }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormFields({ ...formFields, [name]: value });
+    const { name, value } = e.target
+    setFormFields({ ...formFields, [name]: value })
   }
 
   return (
-    <div className='sign-up-container'>
-      <h2>Don't have an account?</h2>
+    <div className="sign-up-container">
+      <h2>Don&#39;t have an account?</h2>
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -100,4 +100,4 @@ const SignUpForm = () => {
   )
 }
 
-export default SignUpForm;
+export default SignUpForm

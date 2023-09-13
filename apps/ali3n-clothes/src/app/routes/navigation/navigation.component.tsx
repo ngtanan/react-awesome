@@ -1,25 +1,25 @@
-import { Fragment, useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Fragment, useContext } from 'react'
+import { Outlet, Link } from 'react-router-dom'
 
-import { ReactComponent as SiteLogo } from "../../../assets/crown.svg";
-import { UserContext } from "../../contexts/user.context";
-import { CartContext } from "../../contexts/cart.context";
-import { signOutAuth } from "../../utils/firebase/firebase.utils";
+import { ReactComponent as SiteLogo } from '../../../assets/crown.svg'
+import { UserContext } from '../../contexts/user.context'
+import { CartContext } from '../../contexts/cart.context'
+import { signOutAuth } from '../../utils/firebase/firebase.utils'
 
-import CartIcon from '../../components/cart-icon/cart-icon.component';
-import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
+import CartIcon from '../../components/cart-icon/cart-icon.component'
+import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component'
 
-import "./navigation.styles.scss";
+import './navigation.styles.scss'
 
-const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
-  const { isCartOpen } = useContext(CartContext);
+function Navigation() {
+  const { currentUser } = useContext(UserContext)
+  const { isCartOpen } = useContext(CartContext)
 
   return (
-    <Fragment>
+    <>
       <div className="navigation">
         <Link to="/" className="logo-container">
-          <SiteLogo className="logo"/>
+          <SiteLogo className="logo" />
         </Link>
         <div className="nav-links-container">
           <Link to="/shop" className="nav-link">SHOP</Link>
@@ -34,8 +34,8 @@ const Navigation = () => {
         {isCartOpen && <CartDropdown />}
       </div>
       <Outlet />
-    </Fragment>
-  );
+    </>
+  )
 }
 
-export default Navigation;
+export default Navigation

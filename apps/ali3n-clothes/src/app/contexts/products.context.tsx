@@ -11,7 +11,7 @@ export const ProductsContext = createContext({
   products: [] as IProduct[]
 })
 
-export function ProductsProvider({ children }: ProductsProviderProps) {
+export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   const [products, setProducts] = useState(PRODUCTS as IProduct[])
   const value = useMemo(() => ({ products }), [products])
 

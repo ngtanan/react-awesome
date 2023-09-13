@@ -14,11 +14,18 @@ const BUTTON_TYPES: { [key: string]: string } = {
 
 const Button = ({ children, buttonType, ...otherProps }: ButtonProps) => (
   <button
+    type="button"
     className={`button-container ${buttonType && BUTTON_TYPES[buttonType]}`}
     {...otherProps}
   >
     {children}
   </button>
 )
+
+Button.defaultProps = {
+  buttonType: '',
+  type: 'button',
+  onClick: () => {}
+}
 
 export default Button

@@ -60,7 +60,7 @@ export const CartContext = createContext<CartContextType>({
   cartTotal: 0
 })
 
-export function CartProvider({ children }: CartProviderProps) {
+export const CartProvider = ({ children }: CartProviderProps) => {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [cartItems, setCartItems] = useState<ICartItem[]>([])
   const [cartCount, setCartCount] = useState<number>(0)

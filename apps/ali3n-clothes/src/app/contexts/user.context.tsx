@@ -19,7 +19,7 @@ export const UserContext = createContext<UserContextType>({
   setCurrentUser: () => ({})
 })
 
-export function UserProvider({ children }: UserProviderProps) {
+export const UserProvider = ({ children }: UserProviderProps) => {
   const [currentUser, setCurrentUser] = useState(null)
   const value = useMemo(() => ({ currentUser, setCurrentUser }), [currentUser, setCurrentUser])
 

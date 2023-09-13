@@ -20,4 +20,10 @@ const FormInput = ({ label, ...otherProps }: FormInputProps) => (
   </div>
 )
 
+FormInput.defaultProps = {
+  label: '',
+  placeholder: '',
+  required: false
+}
+
 export default FormInput
